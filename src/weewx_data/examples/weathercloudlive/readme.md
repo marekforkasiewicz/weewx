@@ -3,7 +3,7 @@
 `weathercloudlive` to szkic rozszerzenia WeeWX do dwóch zadań:
 
 - zapisywanie ostatniego pakietu loop jako `live.json`
-- serwowanie lekkiego ekranu kiosku z dużym zegarem i danymi pogodowymi
+- serwowanie ekranu kiosku Vue z dużym zegarem i danymi pogodowymi
 
 To nie jest pełny driver Weathercloud. Rozszerzenie zakłada, że pakiet loop trafia już do WeeWX
 inną drogą, na przykład przez własny bridge HTTP.
@@ -15,9 +15,10 @@ inną drogą, na przykład przez własny bridge HTTP.
   - normalizuje dane do `METRICWX`
   - zapisuje atomowo `live.json`
 - `skins/WeatherCloudLive`
-  - prosty ekran kiosk
-  - `live.css`
-  - `live.js`
+  - gotowy build kiosku Vue (`app.js`, `app.css`)
+- `kiosk-vue`
+  - źródła Vue 3 + Vite
+  - z nich generujemy statyczny build do skina
 
 ## Instalacja
 
@@ -49,8 +50,8 @@ Po instalacji w `weewx.conf` pojawią się:
 Rozszerzenie zapisuje:
 
 - `index.html`
-- `live.css`
-- `live.js`
+- `app.css`
+- `app.js`
 - `live.json`
 
 do katalogu raportu `StdReport/WeatherCloudLive/HTML_ROOT`.
@@ -62,3 +63,26 @@ Ten scaffold jest przygotowany pod dalsze spięcie z naszym lokalnym bridge:
 - przejęcie `api.weathercloud.net`
 - mapowanie requestów HTTP do pakietu loop
 - pełny dashboard pod ekran RPi3
+
+## Przebudowa frontu Vue
+
+Źródła kiosku są w:
+
+```bash
+src/weewx_data/examples/weathercloudlive/kiosk-vue
+```
+
+Build:
+
+```bash
+cd src/weewx_data/examples/weathercloudlive/kiosk-vue
+npm install
+npm run build
+```
+
+Wynik trafia bezpośrednio do:
+
+```bash
+src/weewx_data/examples/weathercloudlive/skins/WeatherCloudLive/app.js
+src/weewx_data/examples/weathercloudlive/skins/WeatherCloudLive/app.css
+```

@@ -46,8 +46,8 @@ class WeatherCloudLiveInstaller(ExtensionInstaller):
                 ]),
                 ("skins/WeatherCloudLive", [
                     "skins/WeatherCloudLive/index.html.tmpl",
-                    "skins/WeatherCloudLive/live.css",
-                    "skins/WeatherCloudLive/live.js",
+                    "skins/WeatherCloudLive/app.css",
+                    "skins/WeatherCloudLive/app.js",
                     "skins/WeatherCloudLive/skin.conf",
                     "skins/WeatherCloudLive/lang/pl.conf",
                 ]),
