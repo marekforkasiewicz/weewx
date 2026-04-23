@@ -1,0 +1,181 @@
+:root {
+  --bg-top: #edf4ee;
+  --bg-bottom: #d8e7dd;
+  --panel: rgba(255, 255, 255, 0.9);
+  --line: rgba(22, 58, 42, 0.08);
+  --text: #16362b;
+  --muted: #5f7a6f;
+  --accent: #22744e;
+  --shadow: 0 18px 60px rgba(32, 60, 46, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(255, 222, 153, 0.35), transparent 26%),
+    radial-gradient(circle at top left, rgba(112, 180, 143, 0.22), transparent 24%),
+    linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+}
+
+.shell {
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.hero,
+.temperature-panel,
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px 28px;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+}
+
+.brand h1 {
+  margin: 8px 0 0;
+  font-size: 42px;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.brand p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.clock {
+  min-width: 270px;
+  text-align: right;
+}
+
+.clock-time {
+  font-size: 72px;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  font-weight: 800;
+}
+
+.clock-date {
+  margin-top: 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.temperature-panel {
+  padding: 26px 28px;
+}
+
+.temperature-label,
+.label {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.temperature-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.temperature-value {
+  font-size: 128px;
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+  font-weight: 800;
+}
+
+.temperature-unit {
+  font-size: 40px;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.status {
+  margin-top: 14px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  padding: 18px 20px;
+}
+
+.value {
+  margin-top: 10px;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+}
+
+.sub {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .temperature-value {
+    font-size: 92px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero,
+  .footer {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clock {
+    text-align: left;
+  }
+}

@@ -1,0 +1,4 @@
+0.1.0 2026-04-23
+- initial scaffold for live kiosk dashboard
+- add StdService that writes live.json
+- add WeatherCloudLive skin with large clock

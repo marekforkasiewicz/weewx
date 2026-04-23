@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$Extras.dashboard_title</title>
+  <link rel="stylesheet" href="live.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="brand">
+        <div class="eyebrow">WeeWX Live</div>
+        <h1>$Extras.dashboard_title</h1>
+        <p>$Extras.dashboard_subtitle</p>
+      </div>
+      <div class="clock">
+        <div class="clock-time" id="clockTime">--:--</div>
+        <div class="clock-date" id="clockDate">--</div>
+      </div>
+    </section>
+
+    <section class="temperature-panel">
+      <div class="temperature-label">Temperatura</div>
+      <div class="temperature-row">
+        <span class="temperature-value" id="temp">--.-</span>
+        <span class="temperature-unit">°C</span>
+      </div>
+      <div class="status" id="status">Oczekiwanie na dane live...</div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="label">Wilgotność</div>
+        <div class="value" id="humidity">--%</div>
+      </article>
+      <article class="card">
+        <div class="label">Wiatr</div>
+        <div class="value" id="wind">--.- km/h</div>
+        <div class="sub" id="winddir">kierunek ---°</div>
+      </article>
+      <article class="card">
+        <div class="label">Ciśnienie</div>
+        <div class="value" id="pressure">----.- hPa</div>
+      </article>
+      <article class="card">
+        <div class="label">Deszcz</div>
+        <div class="value" id="rain">--.- mm</div>
+        <div class="sub" id="rainrate">opad chwilowy --.- mm/h</div>
+      </article>
+      <article class="card">
+        <div class="label">Nasłonecznienie</div>
+        <div class="value" id="solar">--- W/m²</div>
+        <div class="sub" id="uv">UV --.-</div>
+      </article>
+      <article class="card">
+        <div class="label">Punkt rosy</div>
+        <div class="value" id="dew">--.-°C</div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <span id="updated">Brak pakietu.</span>
+      <span id="meta">Źródło: <strong id="srcip">--</strong> · ID: <strong id="wid">--</strong></span>
+    </footer>
+  </main>
+
+  <script src="live.js"></script>
+</body>
+</html>
